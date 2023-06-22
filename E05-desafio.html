@@ -9,9 +9,21 @@
     */
 
     //ENTRADA
-
+    const baixa = Number(prompt(`Informe quantas consultas de baixa complexidade você atende por dia.`).trim());
+    const media = Number(prompt(`Informe quantas consultas de média complexidade você atende por dia.`).trim());
+    const alta = Number(prompt(`Informe quantas consultas de alta complexidade você atende por dia.`).trim());
 
     //PROCESSAMENTO
+    if (baixa * 15 + media * 40 + alta * 75 / 60 <= 8) {
+        document.write(`você irá receber R$${((baixa * 15 + media * 40 + alta * 75) * (50 / 60)).toFixed(2).replace(".",",")} e você trabalhou ${(Math.floor((baixa * 15 + media * 40 + alta * 75) / 60))} horas e ${(Math.floor((baixa * 15 + media * 40 + alta * 75) % 60))} minutos`)
+    }
+    else if ((baixa * 15 + media * 40 + alta * 75) / 60 >= 10) {
+        document.write(`você irá receber R$${((baixa * 15 + media * 40 + alta * 75) * (75 / 60)).toFixed(2).replace(".",",")} e você trabalhou ${(Math.floor((baixa * 15 + media * 40 + alta * 75) / 60))} horas e ${(Math.floor((baixa * 15 + media * 40 + alta * 75) % 60))} minutos`)
+    }
+    else {
+        document.write(`você irá receber R$${((baixa * 15 + media * 40 + alta * 75) * (90 / 60)).toFixed(2).replace(".",",")} e você trabalhou ${(Math.floor((baixa * 15 + media * 40 + alta * 75) / 60))} horas e ${(Math.floor((baixa * 15 + media * 40 + alta * 75) % 60))} minutos`)
+    }
+
 
     
     //SAÍDA
